@@ -1,0 +1,99 @@
+{% extends './base.html' %}
+
+
+{% block title %} Nueva Consulta {% endblock %}
+
+
+{% block container %}
+
+
+<div class="register">
+	<div class="form-container">
+
+		<div class="main-title">
+			<h1 class="title">Nueva Consulta</h1>
+		</div>
+
+		<div class="personal-information">
+			<h2>Datos personales</h2>
+			<p class="information">
+				<ul class="part-1">
+					<li><b>Tipo de documento: </b> XXXXXXXX</li>
+					<li><b>Número de documento:</b> XXXXXXXX</li>
+					<li><b>xNombres y Apellidos:</b> XXXXXXXX</li>
+					<li><b>Fecha de nacimiento: </b>XXXXXXXX</li>
+				</ul>
+				<ul class="part-2">
+					<li><b>Ocupación:</b> XXXXXXXX</li>
+					<li><b>Dirección:</b> XXXXXXXX</li>
+					<li><b>Teléfono:</b> XXXXXXXX</li>
+					<li><b>Correo: </b>XXXXXXXX@XXXXXXXX</li>
+				</ul>
+			</p>
+		</div>
+
+		<form action="/" class="form">
+			<p>
+			<label for="date" class="label">Fecha</label>
+			<input type="date" class="input input-date">
+			</p>
+
+			<p>
+			<label for="doctor" class="label">Médico</label>
+			<input type="text" class="input input-doctor">
+			</p>
+
+			<p>
+			<label for="weight" class="label">Peso</label>
+			<input type="number" class="input input-weight">
+			</p>
+
+			<p>
+			<label for="height" class="label">Estatura</label>
+			<input type="number" class="input input-height">
+			</p>
+
+			<p>
+			<label for="age" class="label">Edad</label>
+			<input type="number" class="input input-age">
+			</p>
+
+			<p>
+			<label for="occupation" class="label">Ocupación</label>
+			<input type="text" class="input input-occupation">
+			</p>
+
+			 <p>
+			<label for="reason" class="label">Motivo de consulta</label>
+			<input type="text" class="input input-reason">
+			</p>
+
+			<p>
+			<label for="diagnostic" class="label">Diagnóstico</label>
+			<input type="text" class="input input-diagnostic">
+			</p>
+
+			<p>
+			<label for="patient-comment" class="label">Comentarios del paciente</label>
+			<input type="text" class="input input-patient-comment">
+			</p>
+			
+			<p>
+			<label for="doctor-comment" class="label">Comentarios del médico</label>
+			<input type="text" class="input input-doctor-comment">
+			</p>
+			
+
+
+		</form>
+
+		<a href="{{ '/gestionar_citas_medico' }}"><input type="submit" value="Atrás"class="btn_actualizar_datos_paciente" style="width: 200px;"></a>
+
+		<a href="{{ '#' }}"><input type="submit" value="Guardar"class="btn_actualizar_datos_paciente" style="width: 200px;"></a>
+
+		<a href="{{ '/historia_clinica' }}"><input type="submit" value="Historia Clínica"class="btn_actualizar_datos_paciente" style="width: 200px;"></a>
+	</div>
+</div>
+</div>
+	
+	{% endblock %}

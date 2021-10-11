@@ -1,0 +1,144 @@
+{% extends './base.html' %}
+
+
+{% block title %} Historia Clínica {% endblock %}
+
+
+{% block container %}
+
+
+<div class="login">
+	<div class="history-container">
+
+		<div class="main-title">
+			<h1 class="title">Historia Clínica</h1>
+		</div>
+
+		<div class="personal-information">
+			<h2>Datos personales</h2>
+			<p class="information">
+				<ul class="part-1">
+					<li><b>Tipo de documento: </b> XXXXXXXX</li>
+					<li><b>Número de documento:</b> XXXXXXXX</li>
+					<li><b>xNombres y Apellidos:</b> XXXXXXXX</li>
+					<li><b>Fecha de nacimiento: </b>XXXXXXXX</li>
+				</ul>
+				<ul class="part-2">
+					<li><b>Ocupación:</b> XXXXXXXX</li>
+					<li><b>Dirección:</b> XXXXXXXX</li>
+					<li><b>Teléfono:</b> XXXXXXXX</li>
+					<li><b>Correo: </b>XXXXXXXX@XXXXXXXX</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="history">
+			<table style="border: 1px"  class="gestion-table">
+
+				<tr class="encabezado">
+					<td>Fecha</td>
+					<td>Médico</td>
+					<td>Peso (kg)</td>
+					<td>Estatura (m)</td>
+					<td>Comentarios Paciente</td>
+					<td>Diagnóstico</td>
+					<td>Comentarios médico</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr>
+
+				<tr class="sub-colums">
+					<td>15/01/2020</td>
+					<td>XXXX XXXX</td>
+					<td>70</td>
+					<td>1.75 </td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					<td>XXXXXXXXXXXXXXXXXX</td>
+					
+				</tr> 
+				
+			</table>
+				
+				<a href="{{ '/perfil_usuario_paciente' }}"><input type="submit" value="Atrás"class="btn_actualizar_datos_paciente" style="width: 200px;"></a>
+		</div>
+	</div>
+</div>
+	
+	{% endblock %}

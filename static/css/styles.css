@@ -1,0 +1,866 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+    --mx: 24px;
+}
+
+body {
+    margin: 0;
+	padding: 0;
+	background: #E3E7ED url(/images/img01.gif) repeat-x left top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #787878;
+}
+
+.bodyhome{
+	background-color:  #d3e0f3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+}
+
+h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #000000;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: none;
+	border-bottom: 1px dotted #999999;
+	color: #417FDA;
+}
+
+a:hover {
+}
+
+#wrapper {
+	width: 968px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* Header */
+
+#header {
+	width: 968px;
+	height: 150px;
+	margin: 0 auto;
+	background: url(/images/img02.gif) no-repeat left top;
+	background-color: #d1d8da;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 968px;
+	height: 60px;
+	color: #616161;
+}
+
+#logo h1, #logo p {
+	margin: 0;
+	padding: 0;
+}
+
+#logo h1 {
+	float: left;
+	padding: 80px 0 0 80px;
+	letter-spacing: -1px;
+	text-transform: lowercase;
+	font-size: 2.6em;
+}
+
+#logo p {
+	float: left;
+	margin: 0;
+	padding: 90px 10px;
+	font: normal 14px Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+} 
+
+#logo a {
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #616161;
+}
+
+
+/* Menu */
+
+#menu {
+	width: 968px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #1b2e4b;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+	height: 50px;
+	background: url(/images/img03.gif) no-repeat right top;
+}
+
+#menu a {
+	display: block;
+	margin-top: 10px;
+	margin-right: 3px;
+	padding: 7px 20px 7px 20px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFFFFF;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+}
+
+#menu a:hover {
+	text-decoration: underline;
+	
+}
+
+
+.fondo {
+	background-color: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.register {
+	background-color: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+input.src {
+    padding: .5em;
+    margin: 1.8em;
+    outline: none;
+    font-size: 15px;
+    border-radius: 15px;
+    color: #444;
+    border: 3px solid #009fda;
+    height: 15px;
+}
+
+.form-container {
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    justify-items: center;
+}
+
+.form-container > * {
+    padding: 1em;
+}
+
+.form-container .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-container .form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.form-container form select,
+.form-container form input {
+    width: 100%;
+    outline: 0;
+}
+
+
+.logo {
+    width: 310px;
+    margin: 1em;
+}
+
+.title {
+    font-size: var(--mx);
+    margin-bottom: 12px;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: var(--lg);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.input {
+    border:1px solid #555555;
+    border-radius: 8px;
+    font-size: var(--sm);
+    margin-bottom: 12px;
+}
+
+#document-type {
+    border-radius: 8px;
+    border:1px solid #555555;
+    font-size: var(--sm);
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 4px;
+}
+p .account_exist {
+    text-align: end;
+}
+
+.register-bt {
+		align-items: center;
+		color: white;
+		background-color: #39414B;
+		border: none;
+		border-radius: 8px;
+		width: 50%;
+		font-size: var(--mx);
+		font-weight: bold;
+		cursor: pointer;
+		height: 40px;
+}
+
+
+p {
+    text-align: center;
+}
+
+p .account_exist {
+    text-align: end;
+    font-size: var(--sm);
+    list-style: none;
+    padding: 5px;
+}
+
+
+p #account_exist_2:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.password-register {
+    text-align: end;
+    font-size: var(--sm);
+    list-style: none;
+}
+
+.password-register li {
+    padding: 5px;
+}
+
+.password-register li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Footer */
+
+#footer {
+	height: 50px;
+	margin: 0 auto;
+	padding: 0px 0 15px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #B2B2B2;
+}
+
+#footer p {
+	margin: 0;
+	line-height: normal;
+	font-size: 9px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+
+/* pagina actualizar datos */
+
+
+.botonactualizardatos {
+	align-items: center;
+	color: white;
+	background-color: #39414B;
+	border: none;
+	border-radius: 8px;
+	width: 50%;
+	font-size: var(--mx);
+	font-weight: bold;
+	cursor: pointer;
+	height: 40px;
+}
+
+
+/* Perfil Usuario Paciente */
+
+.menuizquierda{
+	background-color: #ffffff;
+	
+	margin: 15px;
+	float: left;
+	width: 250px;
+	height: 500px;
+	padding: 80px 30px 0 20px;
+	color: #787878;
+	font-size: 10px;
+	
+	
+	
+}
+	
+.colorletra{
+	color: rgb(255, 249, 249);
+}
+
+.perfil_usuario{
+	
+position: relative;
+top: 0px;
+float: center;
+
+	}
+
+.titulo_perfil_usuario{
+	text-align: center;
+	
+}	
+
+.boton_perfil_usuario{
+
+	
+	border-color: rgb(255, 255, 255);
+		
+	background-color: #39414B;
+	height: 50px;
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+	margin: 10px;
+	
+	align-items: center;
+	border-radius: 15px;
+	width: 140%;
+	
+		
+	
+	cursor: pointer;
+	
+		
+	position: relative;
+	left: -20px;
+	
+    
+}
+
+/* pagina detalle cita--------------------------------------------*/
+
+.centropagdetcita {
+	text-align: center;
+}
+
+
+.postdcita {
+	margin-bottom: 8px;
+	background: url(images/img09.jpg) repeat-y left top;
+
+}
+
+
+.negro1{
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #000000;
+	font-size: 2.2em;
+	
+}
+
+.negro2{
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #000000;
+	font-size: 1.5em;
+	
+}
+
+.tabladetacita, thead, th, tr, td {
+
+	align-items: center;
+	width: 80%;
+	border: solid 1px black;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+	
+        
+}	
+
+.cabeceratabla{
+	background-color: #1b2e4b;
+	 
+}
+
+.letracabecetabla{
+
+	
+	font-family: Georgia, "Times New Roman", Times, serif;
+	
+	color: #FFFFFF
+
+}
+
+.btndetallecita{
+
+	align-items: center;
+	color: white;
+	background-color: #39414B;
+	border: none;
+	border-radius: 8px;
+	width: 30%;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	height: 40px;
+
+
+}
+/* -------------------------------------------------------- */
+
+/* pagina cancelar cita */
+
+.caption{
+	margin: 10px;
+}
+
+/* ------------------------------------------------------------- */
+
+/* pagina listado citas */
+
+
+
+
+
+
+/* pagina actualizar datos paciente -----------------------------------*/
+
+
+.btn_actualizar_datos_paciente {
+	   align-items: center;
+		color: white;
+		background-color: #39414B;
+		border: none;
+		border-radius: 8px;
+		width: 30%;
+		font-size:25px;
+		font-weight: bold;
+		cursor: pointer;
+		height: 50px;
+		padding: 10px;
+		margin: 20px;
+		position: relative;
+		left: 60px;
+}
+
+/* Pagina cancelar cita-------------------------- */
+
+.btncancelarcita{
+
+	align-items: left;
+	color: white;
+	background-color: #1b2e4b;
+	border: none;
+	border-radius: 8px;
+	width: 40%;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	height: 40px;
+
+}
+
+
+/* Pagina conozcanos-------------------------- */
+
+.conozcanos{
+
+text-align: justify;	
+font-size: 17px;
+}
+
+/* Pagina C0ntactenos -----------------------*/
+
+
+.menuizquierda_contactenos{
+	
+	background-color: #ffffff;
+	margin: 25px;
+	
+	float: left;
+	width: 300px;
+	height: 400px;
+	padding: 10px 0px 0 50px;
+	color: #787878;
+	font-size: 14px;	
+
+	
+
+}
+
+
+.text_contactenos{
+	
+	
+	resize: none;
+}
+
+.btn_Enviar_contactenos{
+
+	align-items: center;
+		color: white;
+		background-color: #707f92;
+		border: none;
+		border-radius: 8px;
+		width: 30%;
+		font-size:25px;
+		font-weight: bold;
+		cursor: pointer;
+		height: 50px;
+		padding: 10px;
+		margin: 20px;
+		position: relative;
+		left: -20px;
+
+}
+
+
+.form-contactenos {
+    width: 50%;
+    
+    
+}
+
+.txt-center {
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 1;
+    margin: 1;
+    position: relative;
+    width: 1.5em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
+
+
+/* Pagina contactenos */
+
+.contactenos{
+width: 220px;
+
+
+}
+
+/* Actualizar datos medico------------------------------------- */
+
+.cancel-button {
+	margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.cancel-bt {
+		align-items: center;
+		color: white;
+		background-color: #39414B;
+		border: none;
+		border-radius: 8px;
+		width: 50%;
+		font-size: var(--mx);
+		font-weight: bold;
+		cursor: pointer;
+		height: 40px;
+}
+
+.actualization-bt {
+    align-items: center;
+    color: white;
+    background-color: #39414B;
+    border: none;
+    border-radius: 8px;
+    width: 50%;
+    font-size: var(--mx);
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+}
+
+.login { 
+	background-color: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
+.login-button {
+    margin-top: 14px;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #39414B;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    font-size: var(--mx);
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+.restore-button {
+    margin-top: 18px;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #39414B;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    font-size: var(--mx);
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+
+}
+
+
+.back-restore {
+    text-align: end;
+    font-size: var(--sm);
+    list-style: none;
+}
+
+.back-restore li {
+    padding: 5px;
+}
+
+.back-restore li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.gestion-container {
+    margin: 50px;
+	width: 70%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .3);
+    justify-items: center;
+    justify-content: center;
+
+}
+
+.gestion-container .title {
+    padding: 1em;
+
+}
+
+.gestion-container .gestion {
+    margin: 0;
+    padding: 2.5em;
+}
+
+.main-title {
+	background-color: #39414B;
+	color: white;
+}
+
+table .encabezado {
+    color: white;
+    background-color: #39414B;
+}
+
+table .sub-colums {
+    font-size: 15px;
+    
+}
+
+
+
+.back-button {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    color: white;
+    background-color: #39414B;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    font-size: var(--mx);
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+
+}
+
+.save-button {
+	margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.save-cancel-bt {
+		align-items: center;
+		color: white;
+		background-color: #39414B;
+		border: none;
+		border-radius: 8px;
+		width: 100%;
+		font-size: var(--mx);
+		font-weight: bold;
+		cursor: pointer;
+		height: 40px;
+}
+
+.solicitar_buscar{
+	color: rgb(255, 255, 255);
+	background-color: #1b2e4b;
+	width: 200px;
+	position: relative;
+	left: 190px;
+	border-radius: 10px;
+	
+
+}
+
+
+.solicitar_cita,  td {
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 80%;
+	text-align: center;
+	position: relative;
+	left: 20px;
+	
+	
+	
+}
+
+.prueba{
+
+	
+
+		align-items: center;
+		width: 80%;
+		border: solid 1px black;
+		border-collapse: collapse;
+		padding: 5px;
+		text-align: center;
+
+}
+
+.tablalistadocita{
+	table-layout: fixed;
+	width: 90%;
+	border: solid 1px black;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+	}
+
+.menuperfilpaciente{
+
+	background-color: #21103a1f;
+	
+}
+	
+	

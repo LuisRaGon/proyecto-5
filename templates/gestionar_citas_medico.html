@@ -1,0 +1,113 @@
+{% extends './base.html' %}
+
+
+{% block title %} Gestionar citas {% endblock %}
+
+
+{% block container %}
+
+
+
+<div class="login" >
+	
+	<h1> Gestión citas médicas</h1>
+		<div class="main-title">
+			
+		</div>
+		<br>
+		<br>
+		<br>
+
+
+		<div class="gestion">
+			<table style="border: 1px;" class="gestion-table">
+
+				<tr class="encabezado">
+					<td>Fecha</td>
+					<td>Hora</td>
+					<td>Paciente</td>
+					<td>Estado</td>
+					
+					<td>Nueva consulta</td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="{{ '/nueva_consulta' }}">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr>
+
+				<tr class="sub-colums">
+					<td>10/01/2020</td>
+					<td>12:00 PM</td>
+					<td>XXXX XXXX</td>
+					<td>Atendido</td>
+					
+					<td><a href="/templates/nueva_consulta.html">Nueva</a></td>
+				</tr> 
+				
+			</table>
+
+			<a href="{{ '/perfil_usuario_medico' }}"><input type="submit" value="Atrás"class="btn_actualizar_datos_paciente" style="width: 200px;"></a>
+		</div>
+	</div>
+</div>
+	
+	{% endblock %}

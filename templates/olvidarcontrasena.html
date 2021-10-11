@@ -1,0 +1,56 @@
+{% extends './base.html' %}
+
+
+{% block title %} Olvidar Contraseña {% endblock %}
+
+
+{% block container %}
+
+
+
+
+<div class="login">
+	<div class="form-container">
+
+		
+			<h1 class="title">Olvidé mi contraseña</h1>
+
+			
+				 <h2 style="text-align: center;">Para restablecer la contraseña, registra la siguiente información:</h2>
+			
+
+		
+
+		<form action="/" class="form" >
+
+			<div class="container" style="position: relative; left:200px">
+
+			<label for="document" class="label">Tipo de documento: *</label>
+			<select name="document" id="document-type">
+				<option value="0"></option>
+				<option value="1">Cédula de Ciudadanía</option>
+				<option value="2">Tarjeta de Identidad</option>
+				<option value="3">Cédula de Extranjería</option>
+				<option value="4">Registro Civil</option>
+				<option value="5">Pasaporte</option>
+			</select>
+			<br>
+			<br>
+
+			<label for="number" class="label">Número de documento: *</label>
+			<input type="number" class="input input-number">
+
+			<input type="submit" value="Restablecer" class="restore-button">
+
+			<ul class="back-restore">
+				<a href= "{{ '/login' }}"><li>Regresar</li></a>
+			</div>
+			</div>	
+			</ul>
+		</form>
+	</div>
+</div>
+
+
+
+	{% endblock %}

@@ -1,0 +1,98 @@
+
+{% extends './base.html' %}
+
+
+{% block title %} Registro {% endblock %}
+
+
+{% block container %}
+
+
+	<!-- end #menu -->
+    <div class="register">
+        <div class="form-container">
+            <h1 class="title">Regístrate</h1>
+
+            <form action="/" class="form">
+                <p>
+                <label for="document" class="label">Tipo de documento: *</label>
+                <select name="document" id="document-type">
+                    <option value="0"></option>
+                    <option value="1">Cédula de Ciudadanía</option>
+                    <option value="2">Tarjeta de Identidad</option>
+                    <option value="3">Cédula de Extranjería</option>
+                    <option value="4">Registro Civil</option>
+                    <option value="5">Pasaporte</option>
+                </select>
+                </p>
+
+                <p>
+                <label for="number" class="label">Número de documento: *</label>
+                <input type="number" class="input input-number">
+                </p>
+
+                <p>
+                <label for="fname" class="label">Nombre Completo: *</label>
+                <input type="text" class="input input-fname">
+                </p>
+
+                <p>
+                    <label for="document" class="label">Tipo de Usuario: *</label>
+                    <select name="document" id="document-type">
+                        <option value="0"></option>
+                        <option value="1">Paciente</option>
+                        <option value="2">Médico</option>
+                        <option value="3">Administrador</option>
+                        
+                    </select>
+                    </p>
+
+                <p>
+                <label for="birthdate" class="label">Fecha de nacimiento: *</label>
+                <input type="date" class="input input-birthdate">
+                </p>
+
+                <p>
+                <label for="phone" class="label">Teléfono: *</label>
+                <input type="number" class="input input-phone">
+                </p>
+
+                <p>
+                <label for="email" class="label">Correo: *</label>
+                <input type="email" class="input input-email">
+                </p>
+
+                <p>
+                <label for="c_email" class="label">Confirmar correo: *</label>
+                <input type="email" class="input input-c_email">
+                </p>
+
+                <p>
+                <label for="password" class="label">Contraseña: *</label>
+                <input type="password" class="input input-password">
+                </p>
+
+                <p>
+                <label for="c_password" class="label">Confirmar contraseña: *</label>
+                <input type="password" class="input input-c_password">
+                </p>
+            </form>
+                <p>
+                    
+                <label><input type="checkbox" name="terms" class="input input-terms"> Aceptar términos y condiciones </label>
+                </p>
+
+                <p class="register-button">
+                <input type="submit" value="Registrarme" class="register-bt"> 
+                </p>
+
+                <p class="account_exist">
+                    ¿Tienes una cuenta? <a href= "{{ '/login' }}"><b id="account_exist_2">Iniciar sesión</b> </a>
+            </p>
+        </div>
+    </div>
+	</div>
+	
+
+    
+    {% endblock %}

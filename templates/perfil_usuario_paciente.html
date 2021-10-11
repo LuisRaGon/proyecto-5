@@ -1,0 +1,125 @@
+{% extends './base.html' %}
+
+
+{% block title %} Perfil De Paciente  {% endblock %}
+
+
+{% block container %}
+
+	
+
+
+	
+	<div class="fondo">
+		<div class="form-container">
+			
+			<div class="menuizquierda" style="width: 20%; float:left" >	
+				
+				<div>
+					<ul>
+						<a href="{{ '/actualizar_datos_paciente' }}"><input type="submit" value="Actualizar Datos" class="boton_perfil_usuario"></a>
+
+											
+						<br>
+						<br>
+						<br>
+						<a href="{{ '/solicitar_cita_medica' }}"><input type="submit" value="Solicitar Cita Médica" class="boton_perfil_usuario"></a>
+						<br>
+						<br>
+						<br>
+						<a href="{{ '/historial_citas_paciente' }}"><input type="submit" value="Historial De Citas" class="boton_perfil_usuario"></a>
+						<br>
+						<br>
+						<br>
+						<a href="{{ '/historia_clinica' }}"><input type="submit" value="Ver historia Clínica" class="boton_perfil_usuario"></a>
+						
+					</ul>
+				</div>
+				
+				
+				
+			</div>	
+
+			<br>
+
+			
+
+			<div style="width: 69%; float:right">
+				<div class="register">
+					<div class="form-container">
+						<h1 class="title">Perfil Del Usuario</h1>
+			
+						<form action="/" class="form">
+							<p>
+							<label for="document" class="label">Tipo de documento: *</label>
+							<select name="document" id="document-type">
+								<option value="0"></option>
+								<option value="1">Cédula de Ciudadanía</option>
+								<option value="2">Tarjeta de Identidad</option>
+								<option value="3">Cédula de Extranjería</option>
+								<option value="4">Registro Civil</option>
+								<option value="5">Pasaporte</option>
+							</select>
+							</p>
+			
+							<p>
+							<label for="number" class="label">Número de documento: *</label>
+							<input type="number" class="input input-number">
+							</p>
+			
+							<p>
+							<label for="fname" class="label">Nombre Completo: *</label>
+							<input type="text" class="input input-fname">
+							</p>
+			
+							<p>
+							<label for="lname" class="label">Ocupacion: *</label>
+							<input type="text" class="input input-ocupacion">
+							</p>
+			
+							<p>
+							<label for="birthdate" class="label">Fecha de nacimiento: *</label>
+							<input type="date" class="input input-birthdate">
+							</p>
+			
+							<p>
+							<label for="phone" class="label">Teléfono: *</label>
+							<input type="number" class="input input-phone">
+							</p>
+			
+							<p>
+							<label for="email" class="label">Correo: *</label>
+							<input type="email" class="input input-email">
+							</p>
+			
+							<p>
+							<label for="direccion" class="label">Direccion: *</label>
+							<input type="text" class="input input-direccion">
+							</p>
+			
+							
+						</form>
+							
+			
+						   
+							 
+			
+							
+						</p>
+					</div>
+				</div>
+				</div>
+			</div>
+
+
+
+			
+
+
+			
+	
+	
+		</div>
+	</div>
+	
+	{% endblock %}

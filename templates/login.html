@@ -1,0 +1,67 @@
+
+{% extends './base.html' %}
+
+
+{% block title %} Iniciar Sesión {% endblock %}
+
+
+{% block container %}
+
+
+	
+
+		<div class="login">
+			<div class="form-container">
+
+				<h1 class="title">Iniciar sesión</h1>
+				<div class="contenedor login " style="background-color: transparent;"  >
+
+				<form action="/perfil_usuario_paciente/maria"  method="POST" class="form">
+
+					{{ csrf_tokem }}
+
+					<p><input type="submit" name="" id=""></p>
+					<br>
+					
+
+					<label for="tipo_usuario" class="label">Tipo de Usuario: *</label>
+					<select name="tipo_usuario" id="document-type">
+						<option value="0"></option>
+						<option value="1">Administrador</option>
+						<option value="2">Medico</option>
+						<option value="3">Paciente</option>
+					</select>
+
+
+					<label for="document" class="label">Tipo de documento: *</label>
+					<select name="document" id="document-type">
+						<option value="0"></option>
+						<option value="1">Cédula de Ciudadanía</option>
+						<option value="2">Tarjeta de Identidad</option>
+						<option value="3">Cédula de Extranjería</option>
+						<option value="4">Registro Civil</option>
+						<option value="5">Pasaporte</option>
+					</select>
+
+					<label for="number" class="label">Número de documento: *</label>
+					<input type="number" class="input input-number">
+
+					<label for="password" class="label">Contraseña: *</label>
+					<input type="password" class="input input-password">
+
+					
+
+					<input type="submit" value="Iniciar sesión" class="login-button">
+					<p>
+					<ul class="password-register">
+						<a href="{{ '/olvidarcontrasena' }}"><li>Olvidé mi contraseña</li></a>
+						<a href="{{ '/registro' }}"> <li>Registrarse</li> </a>
+					</p>
+					</ul>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	{% endblock %}
