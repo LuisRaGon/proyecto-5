@@ -1,0 +1,66 @@
+{% extends './base.html' %}
+
+
+{% block title %} Crear Cita Nueva {% endblock %}
+
+
+{% block container %}
+
+
+<div class="login">
+	<div class="history-container">
+
+		
+			<h1 style="text-align: center;">Crear Cita Nueva</h1>
+		
+		
+			<form action="" class="form" method="post">
+
+                {{ frm.hidden_tag() }}
+
+                <p>
+                    {{  frm. fecha.label  }}
+                    {{  frm. fecha }}
+                    {% for error in frm. fecha.errors %}
+                        <div>
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                 </p>
+
+                 <p>
+                    {{  frm.hora.label  }}
+                    {{  frm.hora }}
+                    {% for error in frm.hora.errors %}
+                        <div>
+                            {{ error }}
+                        </div>
+                    {% endfor %} 
+                 </p>
+
+                 <p>
+                    {{  frm.direccion.label  }}
+                    {{  frm.direccion }}
+                    {% for error in frm.direccion.errors %}
+                        <div>
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                 </p>
+
+                 
+                      {{ frm.guardar }}
+                 
+            </form>
+		
+
+
+	
+	</div>
+	<br>
+	<br>
+	
+</div>
+
+	
+	{% endblock %}

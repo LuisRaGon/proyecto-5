@@ -1,32 +1,27 @@
-from flask import Flask
+from flask import Flask, session
 from flask.scaffold import F
 from flask import render_template 
 from flask import redirect
 from flask import request
+import sqlite3
+import os
+from wtforms.compat import with_metaclass
+import hashlib
+from forms.registropaciente import Registropaciente
+from forms.registromedico import Registromedico
+from forms.registroadmin import Registroadmin  
+from forms.login import Login
+
+
 
 app = Flask(__name__)
 
-#lista de usuarios----------------------
-
-lista_usuarios =["juan","maria"]
-
-#----------------------------------------------------------------------------
-
-#lista de citas---------------------------------------------------
-
-lista_citas={
-    1: "Medico carlos",
-    2: "Medico julian",
-    3: "Medico alex",
-    4: "Medico carmen",
-}
-
-
-sesion_iniciada =False
+app.secret_key = os.urandom(20)
 
 
 
-#pagina inicio--------------
+
+#pagina inicio------------------------------------------------------------------
 
 @app.route('/', methods=["Get"])
 
@@ -34,47 +29,233 @@ def home():
     return  render_template ("index.html")
 
 
-# registro--------------
-
-@app.route('/registro', methods=["Get","POST"])
-def registro():
-    return render_template("/registro.html") 
-
-
-# <Sesión iniciada---------------------------
-
-
-
-
-
-#pagina login--------------
+#pagina login-----------------------------------------------------------------------------
 
 @app.route('/login', methods=["Get","POST"])
 def login():
-    global sesion_iniciada
-    if request.method == "GET":
-        return render_template("login.html")
-    else:
-        sesion_iniciada = True
-        return render_template("perfil_usuario_paciente.html", sesion_iniciada)    
+    frm = Login()
+    if frm.validate_on_submit():
+        tipousuario = frm.tipousuario.data
+        correo = frm.correo.data
+        contrasena = frm.contrasena.data
+         # Cifra la contraseña
+        encrp = hashlib.sha256(contrasena.encode('utf-8'))
+        pass_enc = encrp.hexdigest()
+        with sqlite3.connect("clinica.db") as con: 
+            cur = con.cursor()
+            cur.execute(
+                "SELECT * FROM usuario WHERE tipoususario = ? AND correo = ? AND contrasena = ?", [tipousuario, correo, pass_enc])
+
+            if cur.fetchone():
+
+                rows = cur.fetchall()
+
+                for usu in rows:
+                    session["id_usuario"] = usu[0]
+                    session["tipousuario"] = usu[2]
+                    session["nombre"] = usu[4]
+                    
+
+                    if  session["tipousuario"] == "Paciente":
+
+                        return redirect("/perfil_usuario_paciente.html", frm=frm)
+
+                    elif session["tipousuario"] == "Medico":
+            
+                        return redirect("/perfil_usuario_medico.html", frm=frm)    
+
+                    elif session["tipousuario"] == "Administrador":
+
+                        return redirect("/perfil_admin.html", frm=frm)
+           
+           
+           
+            else:
+                return "Usuario/Password incorrectos"    
     
 
-# salida---------------------------------------
-@app.route('/salir', methods=["POST"])
-def salir():
-    global sesion_iniciada
-    sesion_iniciada =False
-    return redirect ("inicio")    
+    return render_template("login.html", frm=frm )
+            
+
+
+# registro Paciente----------------------------------------------------------------------
+
+@app.route('/registropaciente', methods=["GET","POST"])
+def registrar():
+    frm = Registropaciente()
+    if frm.validate_on_submit():
+        if frm.enviar:
+            
+            tipodocumento = frm.tipodocumento.data
+            numerodocumento = frm.numerodocumento.data
+            nombre = frm.nombre.data
+            correo = frm.correo.data
+            fechanacimiento = frm.fechanacimiento.data
+            genero = frm.genero.data
+            direccion = frm.direccion.data
+            telefono = frm.telefono.data
+            contrasena = frm.contrasena.data
+            eps = frm.eps.data
+              
+            # Cifra la contraseña
+            encrp = hashlib.sha256(contrasena.encode('utf-8'))
+            pass_enc = encrp.hexdigest()
+            # Conecta a la BD
+            with sqlite3.connect("clinica.db") as con:
+                # Crea un cursor para manipular la BD
+                cur = con.cursor()
+                # Prepara la sentencia SQL
+                
+                cur.execute("INSERT INTO usuario ( tipousuario, tipodocumento, numerodocumento,  nombre, correo, fechanacimiento, genero, direccion, telefono, contrasena ) VALUES (?,?,?,?,?,?,?,?,?,?)", ["Paciente", tipodocumento, numerodocumento,  nombre, correo, fechanacimiento, genero, direccion, telefono, pass_enc])
+                           
+                # Ejecuta la sentencia SQL
+
+                con.commit()
+
+               
+
+                cur.execute("SELECT * FROM usuario WHERE numerodocumento = ?", [numerodocumento])
+
+                rows = cur.fetchall()
+                id_usuario = 0
+
+                for usu in rows:
+                    id_usuario =  usu[0]
+
+                
+                #cur = con.cursor()
+                cur.execute("INSERT INTO paciente ( id_paciente, eps ) VALUES (?,?)", [
+                            id_usuario, eps])
+
+                con.commit()
+                return "Guardado con éxito <a href='/'>inicio</a>"
+
+    return render_template("registropaciente.html", frm=frm)
+
+    
+
+
+# registro medico--------------------------------------------------------------------------------------------------------
+
+@app.route('/registromedico', methods=["GET","POST"])
+def registrarmedico():
+    frm = Registromedico()
+    if frm.validate_on_submit():
+        if frm.enviar:
+            
+            tipodocumento = frm.tipodocumento.data
+            numerodocumento = frm.numerodocumento.data
+            nombre = frm.nombre.data
+            correo = frm.correo.data
+            fechanacimiento = frm.fechanacimiento.data
+            genero = frm.genero.data
+            direccion = frm.direccion.data
+            telefono = frm.telefono.data
+            contrasena = frm.contrasena.data
+            especialidad = frm.especialidad.data
+            numeroregistro = frm.numeroregistro.data
+              
+            # Cifra la contraseña
+            encrp = hashlib.sha256(contrasena.encode('utf-8'))
+            pass_enc = encrp.hexdigest()
+            # Conecta a la BD
+            with sqlite3.connect("clinica.db") as con:
+                # Crea un cursor para manipular la BD
+                cur = con.cursor()
+                # Prepara la sentencia SQL
+                cur.execute("INSERT INTO usuario ( tipousuario, tipodocumento, numerodocumento,  nombre, correo, fechanacimiento, genero, direccion, telefono, contrasena ) VALUES (?,?,?,?,?,?,?,?,?,?)", [ "Medico", tipodocumento, numerodocumento,  nombre, correo, fechanacimiento, genero, direccion, telefono, pass_enc])
+                           
+                # Ejecuta la sentencia SQL
+
+
+                con.commit()
+
+                cur.execute("SELECT * FROM usuario WHERE numerodocumento = ?", [numerodocumento])
+
+                rows = cur.fetchall()
+                id_usuario = 0
+
+                for usu in rows:
+                    id_usuario =  usu[0]
+
+                
+                #cur = con.cursor()
+                cur.execute("INSERT INTO medico ( id_medico, especialidad, numeroregistro ) VALUES (?,?,?)", [
+                            id_usuario, especialidad, numeroregistro])
+
+                con.commit()
+                return "Guardado con éxito <a href='/'>inicio</a>"
+               
+
+    return render_template("registromedico.html", frm=frm)
+
+
+
+# registro admin---------------------------------------------------------------------------------------------------------------
+
+@app.route('/registroadmin', methods=["GET","POST"])
+def registraradmin():
+    frm = Registroadmin()
+    if frm.validate_on_submit():
+        if frm.enviar:
+            tipodocumento = frm.tipodocumento.data
+            numerodocumento = frm.numerodocumento.data
+            nombre = frm.nombre.data
+            correo = frm.correo.data
+            fechanacimiento = frm.fechanacimiento.data
+            genero = frm.genero.data
+            direccion = frm.direccion.data
+            telefono = frm.telefono.data
+            contrasena = frm.contrasena.data
+            cargo = frm.cargo.data
+            
+              
+            # Cifra la contraseña
+            encrp = hashlib.sha256(contrasena.encode('utf-8'))
+            pass_enc = encrp.hexdigest()
+            # Conecta a la BD
+            with sqlite3.connect("clinica.db") as con:
+                # Crea un cursor para manipular la BD
+                cur = con.cursor()
+                # Prepara la sentencia SQL
+                cur.execute("INSERT INTO usuario ( tipousuario, tipodocumento, numerodocumento,  nombre, correo, fechanacimiento, genero, direccion, telefono, contrasena ) VALUES (?,?,?,?,?,?,?,?,?,?)", [ "Administrador", tipodocumento, numerodocumento,  nombre, correo, fechanacimiento, genero, direccion, telefono, pass_enc])
+                           
+                # Ejecuta la sentencia SQL
+
+
+                con.commit()
+
+                cur.execute("SELECT * FROM usuario WHERE numerodocumento = ?", [numerodocumento])
+
+                rows = cur.fetchall()
+                id_usuario = 0
+
+                for usu in rows:
+                    id_usuario =  usu[0]
+
+                
+                #cur = con.cursor()
+                cur.execute("INSERT INTO administrador ( id_administrador, cargo ) VALUES (?,?)", [
+                            id_usuario, cargo])
+
+                con.commit()
+                return "Guardado con éxito <a href='/'>inicio</a>"
+
+    return render_template("registroadmin.html", frm=frm)
+
+
+
+
+
 
 
 #perfil usuario paciente-------- 
 
-@app.route('/perfil_usuario_paciente/<id_usuario_paciente>', methods=["Get","POST"])
-def usuario_paciente(id_usuario_paciente):
-    if id_usuario_paciente in lista_usuarios:
+@app.route('/perfil_usuario_paciente', methods=["Get","POST"])
+def usuario_paciente():
+    
         return render_template ("perfil_usuario_paciente.html")
-    else:
-         return f"Error el Usuario {id_usuario_paciente} no existe"
+   
 
 
 
@@ -87,23 +268,12 @@ def actualizar_datos_paciente():
 
 # solicitar cita medica-------------------------
 
-@app.route('/solicitar_cita_medica/<id_cita>', methods=["Get","POST"])
-def solicitar_cita_medica(id_cita):
+@app.route('/solicitar_cita_medica', methods=["Get","POST"])
+def solicitar_cita_medica():
 
-    try:
-        id_cita = int (id_cita)
-    except Exception as e:
-
-        id_cita=0
-       
-    
-    
-    if id_cita in lista_citas:
-        
-            return render_template ("solicitar_cita_medica.html")
+        return render_template ("solicitar_cita_medica.html")
                 
-    else: 
-                return f"error  {id_cita}"
+  
             
         
 
@@ -182,6 +352,64 @@ def nueva_consulta():
 @app.route('/cronograma_citas', methods=["Get"])
 def cronograma_citas():
      return render_template("/cronograma_citas.html")  
+
+
+
+# actualizar Cronogrma citas -------------------------
+
+@app.route('/Actualizar_cronograma_citas', methods=["Get"])
+def Actualizar_cronograma_citas():
+     return render_template("/Actualizar_cronograma_citas.html")       
+
+
+
+# Pacientes Atendidos-------------------------
+@app.route('/pacientes_atendidos', methods=["Get"])
+def pacientes_atendidos():
+     return render_template("/pacientes_atendidos.html")       
+
+# Editar Comentario-------------------------
+@app.route('/editar_comentario', methods=["Get"])
+def editar_comentario():
+     return render_template("/editar_comentario.html")       
+
+
+# Calificar Atenciono-------------------------
+@app.route('/calificar_atencion', methods=["Get"])
+def calificar_atencion():
+     return render_template("/calificar_atencion.html")  
+
+
+
+# Perfil administrador------------------------------
+
+@app.route("/perfil_admin")
+def perfil_admin():
+    return render_template("/perfil_admin.html")
+
+# Perfil administrador----------------------------------
+
+@app.route("/gestionar_usuarios_admin")
+def gestionar_usuarios_admin():
+    return render_template("/gestionar_usuarios_admin.html")
+
+# Perfil administrador-----------------------------------------
+
+@app.route("/gestionar_citas_admin")
+def gestionar_citas_admin():
+    return render_template("/gestionar_citas_admin.html")
+
+# Perfil administrador----------------------------------------
+
+@app.route("/gestionar_historia_clinica_admin")
+def gestionar_historia_clinica_admin():
+    return render_template("/gestionar_historia_clinica_admin.html")
+
+# Perfil administrador--------------------------------------------------
+
+@app.route("/editar_historia_clinica_admin")
+def editar_historia_clinica_admin():
+    return render_template("/editar_historia_clinica_admin.htlm")           
 
 
 

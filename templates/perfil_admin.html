@@ -1,0 +1,177 @@
+{% extends './base.html' %}
+
+
+{% block title %} Perfil de Administrador {% endblock %}
+
+
+{% block container %}
+	
+<div class="fondo">
+	<div class="titulo_perfil_usuario">
+		<h1>Perfil de Administrador</h1>
+	</div>
+	<div class="form-container">
+		<div class="form-containerAdminIzquierda" style="width: 75.2%; float:left">	
+			<h1>   Citas Programadas </h1>		
+			<table class="tablacitasprogramadas" style="margin: 10px">				
+				<thead>
+					<tr>
+						<th class="cabeceratabla"> <h2 class="letracabecetabla">Hora</h2> </th>		  
+						<th class="cabeceratabla"> <h2 class="letracabecetabla">Paciente</h2> </th>
+						<th class="cabeceratabla"> <h2 class="letracabecetabla">Medico</h2> </th>		
+						<th class="cabeceratabla"> <h2 class="letracabecetabla">Estado</h2> </th>					  
+					</tr>
+					
+				</thead>
+						
+				<tbody>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+					<tr>				  
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>				  
+					</tr>
+				</tbody>
+						
+			</table>
+		</div>
+		<div class="form-containerAdminDerecha">			
+			<a href="{{ '/actualizar_datos_medico' }}"><input type="submit" value="Actualizar Datos"class="btn_perfiladmin" style="width: 180px;"></a>	
+			<a href="{{ '/gestionar_usuarios_admin' }}"><input type="submit" value="Gestión de Usuarios"class="btn_perfiladmin" style="width: 180px;"></a>
+			<a href="{{ '/gestionar_citas_admin' }}"><input type="submit" value="Gestión de citas"class="btn_perfiladmin" style="width: 180px;"></a>
+			<a href="{{ '/gestionar_historia_clinica_admin' }}"><input type="submit" value="Historias Clinicas"class="btn_perfiladmin" style="width: 180px;"></a>
+			<br>
+			<br>
+			<p>USUARIOS REGISTRADOS</p>
+			<p>350</p>
+			<p>MEDICOS EN TURNO</p>
+			<p>5</p>
+			<p>MEDICOS DISPONIBLES PARA URGENCIAS</p>
+			<p>2</p>
+		</div>
+	</div>	
+		<br>
+		<br>
+		
+</div>			
+{% endblock %}

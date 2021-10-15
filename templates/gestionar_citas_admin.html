@@ -1,0 +1,159 @@
+{% extends './base.html' %}
+
+
+{% block title %} Gestión Citas Medicas {% endblock %}
+
+
+{% block container %}
+	
+<div class="fondo">
+	<div class="titulo_perfil_usuario">
+		<h1>Gestión Citas Medicas (Administrador)</h1>
+	</div>
+	<div class="form-container">
+		<div class="form-containerAdmin" style="text-align: center;">		
+			<table class="tablacitasprogramadas" style="margin: 10px">				
+				<thead>
+					<tr>
+						<th class="cabeceratabla"> <h2 class="letracabecetabla" style="font-size: 13px;">FECHA</h2> </th>		  
+						<th class="cabeceratabla"> <h2 class="letracabecetabla" style="font-size: 13px;">HORA</h2> </th>
+						<th class="cabeceratabla"> <h2 class="letracabecetabla" style="font-size: 13px;">PACIENTE</h2> </th>		
+						<th class="cabeceratabla"> <h2 class="letracabecetabla" style="font-size: 13px;">MEDICO</h2> </th>
+						<th class="cabeceratabla"> <h2 class="letracabecetabla" style="font-size: 13px;">ESTADO</h2> </th>
+						<th class="cabeceratabla"> <h2 class="letracabecetabla" style="font-size: 13px;">CANCELAR</h2> </th>
+					</tr>
+					
+				</thead>
+						
+				<tbody>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>
+
+						<td>Cancelar</td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Cancelada</td>
+
+						<td>  ----  </td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>
+
+						<td>Cancelar</td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>
+
+						<td>Cancelar</td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Atendido</td>
+
+						<td>Cancelar</td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Pendiente</td>
+
+						<td>Cancelar</td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Pendiente</td>
+
+						<td>Cancelar</td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Cancelada</td>
+
+						<td>  ----  </td>
+					</tr>
+					<tr>				  
+						<td>xx/xx/xx</td>
+
+						<td>xx:xx xx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Xxxxx xxxxxx xxxx xxxx</td>
+
+						<td>Pendiente</td>
+
+						<td>Cancelar</td>
+					</tr>	
+						
+					</tr>
+				</tbody>
+
+			</table>
+			<a href="{{ '/perfil_admin' }}"><input type="submit" value="Atras"class="btn_perfiladmin" style="width: 100px;"></a>	
+			<a href="{{ '/registro' }}"><input type="submit" value="Crear Usuario (Registrar)"class="btn_perfiladmin" style="width: 200px;"></a>
+		</div>		
+	</div>	
+		<br>
+		<br>
+		
+</div>			
+{% endblock %}

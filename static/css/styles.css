@@ -12,7 +12,7 @@
 body {
     margin: 0;
 	padding: 0;
-	background: #E3E7ED url(/images/img01.gif) repeat-x left top;
+	background: #E3E7ED  repeat-x left top;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #787878;
@@ -72,7 +72,7 @@ a:hover {
 	width: 968px;
 	height: 150px;
 	margin: 0 auto;
-	background: url(/images/img02.gif) no-repeat left top;
+	background:  no-repeat left top;
 	background-color: #d1d8da;
 }
 
@@ -135,7 +135,7 @@ a:hover {
 #menu li {
 	float: left;
 	height: 50px;
-	background: url(/images/img03.gif) no-repeat right top;
+	background:  no-repeat right top;
 }
 
 #menu a {
@@ -403,7 +403,7 @@ float: center;
 
 .postdcita {
 	margin-bottom: 8px;
-	background: url(images/img09.jpg) repeat-y left top;
+	background:  repeat-y left top;
 
 }
 
@@ -863,4 +863,58 @@ table .sub-colums {
 	
 }
 	
+.tablacitasprogramadas{
+	table-layout: fixed;
+	width: 100%;
+	border: solid 1px #000000;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: right;
+	column-count: 4;	
+	column-width: 20px;
+	}
+.form-containerAdminIzquierda {
+	width: 75.2%;;
+	max-width: 700px;
+	margin: 20px;
+	float: left;
+	padding: 0px 20px 0 0;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+	justify-items: right;	
+}
+.form-containerAdminDerecha {
+	width: 24.8%;;
+	max-width: 185px;
+	margin: 0 auto;
+	float: right;
+	padding: 0px 20px 0 0;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+	justify-items: center;
+	align-items: center;
+}
+.form-containerAdmin{
+	width: 1000%;;
+	max-width: 900px;
+	margin: 20px;
+	float: left;
+	padding: 0px 20px 0 0;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+	justify-items: right;
+}	
+.btn_perfiladmin {
+	align-items: center;
+	color: white;
+	background-color: #39414B;
+	border: none;
+	border-radius: 8px;
+	width: 150px;
+	font-size:15px;
+	font-weight: bold;
+	cursor: pointer;	
+	padding: 10px;
+	margin: 10px;
+	position: static;
+	left: 60px;
+}
+
 	
